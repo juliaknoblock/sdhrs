@@ -1,0 +1,442 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<title>HTML PHP Contact Form by WebDesy.com</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<!--<link rel="stylesheet" type="text/css" href="styles.css" /-->
+	<body OnLoad="document.adopterProfile.sender_name.focus();">
+	<style>
+		@import 'https://fonts.googleapis.com/css?family=Droid+Serif';
+		body{
+			background-color: #f9f9f9;
+		}
+		div {
+			width: 75%;
+			margin: 0 auto;
+			background-color:white;
+			font-family: 'Droid Serif', serif;
+			color:#444444;
+			padding-bottom:15px;
+		}
+		h1{
+			text-align:center;
+			padding-top:15px;
+			text-transform: uppercase;
+		}
+		h3{
+			padding:15px;
+		}
+		.note{
+			padding:50px;
+		}
+		.form{
+			margin: 0 auto;
+		}
+		form {
+			width:100%;
+		}
+		label{
+			padding:10px;
+		}
+		input[type=text], [type=email], [type=tel], textarea {
+		  -webkit-transition: all 0.30s ease-in-out;
+		  -moz-transition: all 0.30s ease-in-out;
+		  -ms-transition: all 0.30s ease-in-out;
+		  -o-transition: all 0.30s ease-in-out;
+		  display: block;
+		    padding: 5px 5px 3px 10px;
+  			margin: 5px 1px 3px 0px;
+  			outline:none;
+		  width: 100%; height: 40px;
+		  line-height: 40px; font-size: 17px;
+		  border: 1px solid #65beb5;
+		  border-radius: 37px; 
+			border-radius: 37px; 
+		-moz-border-radius: 37px; 
+		-webkit-border-radius: 37px; 
+		}
+		textarea{
+			height:120px;
+			padding: 10px;
+		}
+		input[type=text]:focus, [type=email]:focus, [type=tel]:focus, textarea:focus {
+  		box-shadow: 0 0 5px rgba(101,190,181, 0.8);
+  		padding: 3px 0px 3px 10px;
+  		margin: 5px 1px 3px 0px;
+  		border: 1px solid rgba(101,190,181, 0.8);
+}
+
+		input[type=checkbox], [type=radio] {
+		 width: 10px; height: 10px;
+		 -webkit-border-radius: 22px; -moz-border-radius: 22px; border-radius: 22px;
+		 border: 1px solid #65beb5;
+}
+		#submit {
+			border : solid 1px #ffffff;
+			border-radius : 15px;
+			-moz-border-radius : 15px;
+			font-family: 'Droid Serif', serif;
+			font-size : 20px;
+			color : #ffffff;
+			padding : 6px 20px;
+			background-color : #65beb5;
+		}
+	</style>
+<script src='https://www.google.com/recaptcha/api.js'></script>
+
+</head>
+
+<body>
+<div>
+<h1>Adopter Profile</h1>
+<h3>Thank you for your interest in adopting a rescued rabbit from San Diego House Rabbit Society. We have done our best to ensure that rabbits available for adoption are healthy and of sound temperament. All rabbits are spayed or neutered, and litter box trained.  </h3>
+
+<h3>Our goal is to match you with a rabbit based on the best temperament for you.  Some rabbits will be better suited to a more experienced adopter, and others are great for first-time rabbit families.  For those families or individuals inexperienced with indoor rabbit companions, we will ask you to attend our Bunny 101 seminar. They are held Saturdays from 10:30AM to 12:30PM.</h3>  
+
+<h3>As part of our efforts to find the best possible permanent homes for our foster rabbits, we request that you answer each of the following questions carefully.  We will review your adopter profile and use it to help you find the best rabbit match for your family.</h3>
+
+<h3>Thank you for taking the time to complete our adopter profile form!</h3>
+
+<p class="note">Note: You must be 21 years of age to adopt.  If you are under 21 and live at home, please have a parent or guardian complete the form with you. Your parent or guardian (21 or older)  will be the person required to sign the legal adoption contract. We adopt only to homes where the rabbit is housed as an indoor family companion.</p>
+
+<div class="form">
+
+<form name="adopterProfile" action="adopterprofile.php" method="POST">
+	<label for="field_name">Name:</label>
+	<input type="text" id="field_name" name="sender_name" required>
+	<br /><br />
+
+	<label for="field_email">Your e-mail:</label>
+	<input type="email" id="field_email" name="sender_email" required>
+	<br /><br />
+
+	<label for="field_dob">Your Date of Birth (July 2, 1988):</label>
+	<input type="text" id="field_dob" name="sender_dob" required>
+	<br /><br />
+
+	<label for="field_address">Street Address:</label>
+	<input type="text" id="field_address" name="sender_address" required>
+	<br /><br />
+
+	<label for="field_city">City, State, &amp; Zip Code:</label>
+	<input type="text" id="field_city" name="sender_city" required>
+	<br /><br />
+
+	<label for="field_phone">Your Phone Number (XXX-XXX-XXXX):</label>
+	<input type="tel" id="field_phone" name="sender_phone" required>
+	<br /><br />
+
+	<p>Describe your living situation (check all that apply)</p>
+	<input id="check_1" type="checkbox" name="living_situation[]" value="own home">
+	<label for="check_1">Own Home</label>
+	<br />
+	
+	<input id="check_2" type="checkbox" name="living_situation[]" value="rent home">
+	<label for="check_2">Rent Home</label>
+	<br />
+
+	<input id="check_4" type="checkbox" name="living_situation[]" value="share with roommates">
+	<label for="check_3" >Share Home with Roomate(s)</label>
+	<br />
+
+	<input id="check_4" type="checkbox" name="living_situation[]" value="military housing">
+	<label for="check_3" >Military Housing</label>
+	<br />
+
+	<input id="check_4" type="checkbox" name="living_situation[]" value="live with parents">
+	<label for="check_3" >Live with Parents</label>
+	<br /><br />
+
+	<label for="field_message">If renting, provide your landlord's name and phone number:</label>
+	<textarea id="field_message" name="landlord_contact"></textarea>
+	<br /><br />
+
+	<p>Do all members of your household want a rabbit?</p>
+	<input id="radio_1" type="radio" name="all_want" value="yes">
+	<label for="radio_1">Yes</label>
+	<br />
+
+	<input id="radio_2" type="radio" name="all_want" value="no">
+	<label for="radio_2">No</label>
+	<br /><br />
+
+	<label for="field_message">Why are you thinking about adoptng a rabbit?</label>
+	<textarea id="field_message" name="why_want"></textarea>
+	<br /><br />
+
+	<label for="field_message">Where else have you looked?</label>
+	<textarea id="field_message" name="looked_elsewhere"></textarea>
+	<br /><br />
+
+	<label for="field_message">What kind of personality traits are you looking for in a rabbit companion?</label>
+	<textarea id="field_message" name="personality"></textarea>
+	<br /><br />
+
+	<p>What role will a rabbit play in your life?</p>
+	<input id="check_1" type="checkbox" name="rabbit_role[]" value="companion for adult">
+	<label for="check_1">Companion for adult</label>
+	<br />
+	
+	<input id="check_2" type="checkbox" name="rabbit_role[]" value="companion for family">
+	<label for="check_2">Companion for family</label>
+	<br />
+
+	<input id="check_4" type="checkbox" name="rabbit_role[]" value="companion for children">
+	<label for="check_3" >Compantion for children</label>
+	<br />
+
+	<input id="check_4" type="checkbox" name="rabbit_role[]" value="companion for another animal">
+	<label for="check_3" >Companion for another animal</label>
+	<br />
+
+	<input id="check_4" type="checkbox" name="rabbit_role[]" value="other">
+	<label for="check_3" >Other</label>
+	<br /><br />
+
+	<label for="field_message">If "other," please describe:</label>
+	<textarea id="field_message" name="role_describe"></textarea>
+	<br /><br />
+
+	<p>Does anyone in your family or household have allergies or asthma?</p>
+	<input id="radio_1" type="radio" name="allergies" value="yes">
+	<label for="radio_1">Yes</label>
+	<br />
+
+	<input id="radio_2" type="radio" name="allergies" value="no">
+	<label for="radio_2">No</label>
+	<br /><br />
+
+	<label for="field_message">If "yes," please explain (don't forget grass allergies - hay is a rabbit's primary food source):</label>
+	<textarea id="field_message" name="allergies_explain"></textarea>
+	<br /><br />
+
+	<label for="field_message">If there are children in the house under the age of 18, please list their ages:</label>
+	<textarea id="field_message" name="kids_ages"></textarea>
+	<br /><br />
+
+	<p>Will the rabbit be given as a gift?</p>
+	<input id="radio_1" type="radio" name="gift" value="yes">
+	<label for="radio_1">Yes</label>
+	<br />
+
+	<input id="radio_2" type="radio" name="gift" value="no">
+	<label for="radio_2">No</label>
+	<br /><br />
+
+	<p>Have you owned a rabbit in the past?</p>
+	<input id="radio_1" type="radio" name="rabbit_past" value="yes">
+	<label for="radio_1">Yes</label>
+	<br />
+
+	<input id="radio_2" type="radio" name="rabbit_past" value="no">
+	<label for="radio_2">No</label>
+	<br /><br />
+
+	<label for="field_message">If yes, where is he/she now?</label>
+	<textarea id="field_message" name="where_rabbit"></textarea>
+	<br /><br />
+
+	<label for="field_message">If you ever gave a rabbit away, why was this necessary?</label>
+	<textarea id="field_message" name="gave_away"></textarea>
+	<br /><br />
+
+	<label for="field_message">Are there any other pets in the home? If yes, please describe breeds, ages and whether or not the animal is spayed or neutered.</label>
+	<textarea id="field_message" name="other_pets"></textarea>
+	<br /><br />
+
+	<label for="field_message">Are there any other rabbits in the home? If yes, please describe ages, sexes and whether or not the rabbit is spayed or neutered.</label>
+	<textarea id="field_message" name="other_rabbits"></textarea>
+	<br /><br />
+
+	<p>Where are you planning on housing the rabbit?</p>
+	<input id="radio_1" type="radio" name="housing" value="indoors">
+	<label for="radio_1">Indoors</label>
+	<br />
+
+	<input id="radio_2" type="radio" name="housing" value="outdoors">
+	<label for="radio_2">Outdoors</label>
+	<br />
+
+	<input id="radio_2" type="radio" name="housing" value="indoors and outdoors">
+	<label for="radio_2">Indoors &amp; Outdoors</label>
+	<br /><br />
+
+	<label for="field_message">Describe the location and how you plan to setup your rabbit's living area:</label>
+	<textarea id="field_message" name="living_area"></textarea>
+	<br /><br />
+
+	<p>Do you have the necessary housing supplies ready today?</p>
+	<input id="radio_1" type="radio" name="have_supplies" value="yes">
+	<label for="radio_1">Yes</label>
+	<br />
+
+	<input id="radio_2" type="radio" name="have_supplies" value="no">
+	<label for="radio_2">No</label>
+	<br /><br />
+
+	<label for="field_message">If yes, what do you have and describe the size:</label>
+	<textarea id="field_message" name="housing_size"></textarea>
+	<br /><br />
+
+	<p>Where have you learned about rabbit care? Check all that apply:</p>
+	<input id="check_1" type="checkbox" name="learned_care[]" value="HRS websites">
+	<label for="check_1">HRS Websites</label>
+	<br />
+	
+	<input id="check_2" type="checkbox" name="learned_care[]" value="HRS educational materials">
+	<label for="check_2">HRS Educational Materials</label>
+	<br />
+
+	<input id="check_4" type="checkbox" name="learned_care[]" value="miscellaneous websites">
+	<label for="check_3" >Miscellaneous websites</label>
+	<br />
+
+	<input id="check_4" type="checkbox" name="learned_care[]" value="books on rabbit care">
+	<label for="check_3" >Books on rabbit care</label>
+	<br />
+
+	<input id="check_4" type="checkbox" name="learned_care[]" value="from a friend">
+	<label for="check_3" >From a friend</label>
+	<br />
+
+	<input id="check_4" type="checkbox" name="learned_care[]" value="i've had a rabbit in the past">
+	<label for="check_3" >I've had a rabbit in the past</label>
+	<br /><br />
+
+	<p>With proper care and diet, a rabbit can live up to 8-12 years. Are you prepared to care for this rabbit for the duration of his/her life?</p>
+	<input id="check_1" type="checkbox" name="care_for_duration[]" value="yes">
+	<label for="check_1">Yes</label>
+	<br />
+	
+	<input id="check_2" type="checkbox" name="care_for_duration[]" value="no">
+	<label for="check_2">No</label>
+	<br />
+
+	<input id="check_4" type="checkbox" name="care_for_duration[]" value="maybe">
+	<label for="check_3" >Maybe</label>
+	<br />
+
+	<input id="check_4" type="checkbox" name="care_for_duration[]" value="my family will take care of the rabbit if i cannot">
+	<label for="check_3" >My family will take care of the rabbit if I cannot</label>
+	<br /><br />
+
+	<p>What circumstances would prevent you from keeping your rabbit?</p>
+	<input id="check_1" type="checkbox" name="prevent[]" value="illness in rabbit">
+	<label for="check_1">Illness in rabbit</label>
+	<br />
+	
+	<input id="check_2" type="checkbox" name="prevent[]" value="vet bills too expensive">
+	<label for="check_2">Vet bills too expensive</label>
+	<br />
+
+	<input id="check_4" type="checkbox" name="prevent[]" value="new baby in home">
+	<label for="check_3" >New baby in home</label>
+	<br />
+
+	<input id="check_4" type="checkbox" name="prevent[]" value="not enough time for the rabbit">
+	<label for="check_3" >Not enough time for the rabbit</label>
+	<br />
+
+	<input id="check_1" type="checkbox" name="prevent[]" value="moving">
+	<label for="check_1">Moving</label>
+	<br />
+	
+	<input id="check_2" type="checkbox" name="prevent[]" value="leaving for college">
+	<label for="check_2">Leaving for college</label>
+	<br />
+
+	<input id="check_4" type="checkbox" name="prevent[]" value="family splitting up">
+	<label for="check_3" >Family splitting up</label>
+	<br />
+
+	<input id="check_4" type="checkbox" name="prevent[]" value="personal illness">
+	<label for="check_3" >Personal illness</label>
+	<br />
+
+	<input id="check_4" type="checkbox" name="prevent[]" value="i would never give up my rabbit">
+	<label for="check_3" >I would never give up my rabbit</label>
+	<br /><br />
+
+	<p>Can you afford to pay someone to care for your rabbit when you are away for a period of time? Average cost is $25/day</p>
+	<input id="radio_1" type="radio" name="afford_boarding" value="yes">
+	<label for="radio_1">Yes</label>
+	<br />
+
+	<input id="radio_2" type="radio" name="afford_boarding" value="no">
+	<label for="radio_2">No</label>
+	<br />
+
+	<input id="radio_2" type="radio" name="afford_boarding" value="not sure">
+	<label for="radio_2">Not Sure</label>
+	<br /><br />
+
+	<p>Can you afford the costs of an experienced rabbit vet, should your rabbit become ill? Average sick bunny visit is about $400; surgery about $1,200 or more.</p>
+	<input id="check_1" type="checkbox" name="medical_expenses[]" value="yes">
+	<label for="check_1">Yes</label>
+	<br />
+	
+	<input id="check_2" type="checkbox" name="medical_expenses[]" value="no">
+	<label for="check_2">No</label>
+	<br />
+
+	<input id="check_4" type="checkbox" name="medical_expenses[]" value="i'm not sure">
+	<label for="check_3" >I'm not sure</label>
+	<br />
+
+	<input id="check_4" type="checkbox" name="medical_expenses[]" value="i have pet insurance">
+	<label for="check_3" >I have pet insurance</label>
+	<br /><br />
+
+	<p>Please check any of the following areas where you would like more information:</p>
+	<input id="check_1" type="checkbox" name="more_info[]" value="housing" required >
+	<label for="check_1">Housing</label>
+	<br />
+	
+	<input id="check_2" type="checkbox" name="more_info[]" value="proper diet">
+	<label for="check_2">Proper diet</label>
+	<br />
+
+	<input id="check_4" type="checkbox" name="more_info[]" value="nail trimming">
+	<label for="check_3" >Nail Trimming</label>
+	<br />
+
+	<input id="check_4" type="checkbox" name="more_info[]" value="grooming">
+	<label for="check_3" >Grooming</label>
+	<br />
+
+	<input id="check_1" type="checkbox" name="more_info[]" value="handling">
+	<label for="check_1">Handling</label>
+	<br />
+	
+	<input id="check_2" type="checkbox" name="more_info[]" value="litter box training">
+	<label for="check_2">Litter Box Training</label>
+	<br />
+
+	<input id="check_4" type="checkbox" name="more_info[]" value="bunny proofing home/yard">
+	<label for="check_3" >Bunny proofing my home/yard</label>
+	<br />
+
+	<input id="check_4" type="checkbox" name="more_info[]" value="other">
+	<label for="check_3" >Other</label>
+	<br /><br />
+
+	<label for="field_message">If other, please explain:</label>
+	<textarea id="field_message" name="other_info_explain"></textarea>
+	<br /><br />
+
+	<label for="field_name">Which rabbit(s) are you interesting in meeting?</label>
+	<input type="text" id="field_name" name="interested_rabbit">
+	<br /><br />
+
+	<label for="field_message">How did you hear about us?</label>
+	<textarea id="field_message" name="hear_about_us"></textarea>
+	<br /><br />
+
+	<div class="g-recaptcha" data-sitekey="6Ld7JggUAAAAAEK81IPAIB5qpf3Z09_qiKZJEWO4"></div>
+
+	<center><input type="submit" id="submit" name="send_message" value="Send"></center>
+</form>
+
+</div>
+</div>
+
+

@@ -1,0 +1,8 @@
+/* bootstrap styles. base style */ @import url('css/bootstrap.min.css');
+/* reset bootsrap */ @import url('css/reset.css');
+/* style for page content*/ @import url('css/content.css');
+/* style for everything else*/ @import url('css/main.css');
+/* style for icons */ @import url('css/font-awesome.min.css');
+/* style for nav*/ @import url('css/nav.css');
+/* style for event calendar on mainphp */ @import url('css/events.css');
+/* style for footer text */ @import url('css/footertext.css');

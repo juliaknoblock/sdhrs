@@ -1,0 +1,92 @@
+header {
+    width:100%;
+    margin: auto;
+    text-align:center;
+}
+
+#pagelink{
+  color: #65beb5 !important;
+  text-decoration: none !important;
+  font-size:12pt !important;
+  }
+
+
+.contentarea {
+    background: white;
+    font-size:100%;
+    line-height:1.5;
+    font-family: 'Merriweather', Georgia, 'Times New Roman', Times, serif !important;
+    max-width:800px;
+    margin:auto;
+    padding:0 1em;
+	font-size:15px !important;
+	color:black;
+}
+
+
+.head1, .head2{
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+    color: #27272E;
+}
+
+.head1 span {
+    font-family: 'Merriweather', Georgia, 'Times New Roman', Times, serif;
+    font-style:italic;
+}
+
+.head1 {
+    font-size: 2.747em;
+    margin: 0;
+    line-height:1.1;
+    text-transform: uppercase;
+}
+
+.head1 span:nth-of-type(1) {
+    font-size:0.63em;
+    display:block;
+    margin: 1em auto 0 auto;
+    text-transform: none;
+}
+
+.head2 {
+    text-transform: uppercase;
+    border-top: 1px solid darkgrey;
+    font-size: .874em;
+    text-align: center;
+    line-height:1;
+    margin-top:1.953em;
+}
+
+.head2 span {
+    background: white;
+    position:relative;
+    top:-.45em;
+    padding: 0 5%;
+    margin-top:-1em;
+}
+
+.head3 {
+    font-style: italic;
+    font-weight:700;
+    font-size:1.229em;
+    margin:1em 0 .25em 0;
+}
+
+p {
+    margin-bottom: 1em;
+}
+
+@media screen and (max-width: 25em) {
+    body {
+        font-size: 60%;
+    }
+@media (max-width: 767px) and (min-width: 320px) {
+.head2 span {
+    font-size: 15px !important;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+.head2  span {
+	font-size:15px; !important}
+
+}
